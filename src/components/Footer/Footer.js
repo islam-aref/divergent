@@ -1,7 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
+  const handleProgramsClick = (e) => {
+    // If we're already on the homepage
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      const splitSectionElement = document.getElementById("splitSection");
+      if (splitSectionElement) {
+        splitSectionElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+    // Otherwise, default Link behavior will take us to "/"
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
@@ -21,26 +37,22 @@ const Footer = () => {
           <div className={styles.linksColumn}>
             <ul className={styles.linksList}>
               <li>
-                <a href="/about">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="/network">Network</a>
+                <Link to="/" onClick={handleProgramsClick}>
+                  Programs
+                </Link>
               </li>
               <li>
-                <a href="/news">News</a>
+                <Link to="/gallery">Gallery</Link>
               </li>
             </ul>
           </div>
           <div className={styles.linksColumn}>
             <ul className={styles.linksList}>
               <li>
-                <a href="/programs">Programs</a>
-              </li>
-              <li>
-                <a href="/services">Services</a>
-              </li>
-              <li>
-                <a href="/events">Events</a>
+                <Link to="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>

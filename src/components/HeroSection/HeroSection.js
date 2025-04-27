@@ -23,7 +23,6 @@ const HeroSection = () => {
   return (
     <div className={styles.scrollContainer} ref={scrollContainerRef}>
       <div className={styles.hero}>
-        {/* Hero Image */}
         <div
           className={styles.heroImage}
           style={{
@@ -39,7 +38,7 @@ const HeroSection = () => {
               transform: `translateY(${-scrollProgress * 50}px)`,
             }}
           >
-            ENVIROFLIGHT
+            DIVERGENT
           </h1>
         </div>
 
@@ -55,13 +54,14 @@ const HeroSection = () => {
         >
           <div className={styles.textContent}>
             <h2 className={styles.heroHeadline}>
-              Changing the world, one
+              Divergent is a pioneering educational startup dedicated to
+              transforming
               <br />
-              sustainable ingredient at a time
+              the traditional learning landscape through engaging competitions
             </h2>
             <p className={styles.heroSubscript}>
-              EnviroFlight produces all-natural, locally sourced black soldier
-              fly larvae (BSFL) feed ingredients.
+              inspiring a new generation of leaders, problem solvers, and
+              changemakers
             </p>
           </div>
         </div>

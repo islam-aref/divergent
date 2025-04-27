@@ -1,0 +1,76 @@
+.stemPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #d7c9f9;
+}
+
+.stemContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stemImage {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(37, 4, 92, 0.2);
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.stemImage:hover {
+  transform: scale(1.03);
+}
+
+.textBox {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #d3c1fb; /* brighter background from your palette */
+  text-align: center;
+  position: relative;
+  border-radius: 15px;
+}
+
+.textBox::before,
+.textBox::after {
+  content: "";
+  position: absolute;
+  border: 3px solid #8d0dee;
+  border-radius: 25px;
+}
+
+.textBox::before {
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 20%;
+  border-bottom: none;
+  border-right: none;
+}
+
+.textBox::after {
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 20%;
+  border-top: none;
+  border-left: none;
+}
+
+.headline {
+  font-size: 2.5rem;
+  color: #25045c;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  color: #39047a;
+  line-height: 1.6;
+}

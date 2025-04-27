@@ -1,82 +1,111 @@
-@import "../../styles/variables.module.css";
-
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 5%;
-  background-color: #25045c; /* Primary dark */
+  background-color: #ab6ed7;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #d7c9f9; /* Light purple */
-  text-decoration: none;
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  height: 40px;
+}
+
+.logoImage {
+  height: 100%;
+  width: auto;
 }
 
 .navLinks {
   display: flex;
   gap: 2.5rem;
+  align-items: center;
+}
+
+.navItem {
+  position: relative;
 }
 
 .navLink {
-  color: #d7c9f9; /* Light purple */
+  color: #25045c;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
   letter-spacing: 0.5px;
+  transition: color 0.2s;
   position: relative;
-  padding: 0.5rem 0;
-  transition: all 0.3s ease;
 }
 
 .navLink:hover {
-  color: #ffffff;
+  color: #8d0dee;
 }
 
-.navLink::after {
-  content: "";
+.dropdown {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #8d0dee; /* Primary accent */
-  transition: width 0.3s ease;
-}
-
-.navLink:hover::after {
-  width: 100%;
-}
-
-.languageButton {
-  background: transparent;
-  border: 2px solid #8d0dee; /* Primary accent */
-  color: #d7c9f9; /* Light purple */
-  padding: 0.5rem 1.5rem;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 180px;
   border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  z-index: 1001;
+  margin-top: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.languageButton:hover {
-  background-color: #8d0dee; /* Primary accent */
-  color: white;
+.navItem:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #25045c;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #f8f5ff;
+  color: #8d0dee;
+}
+
+.languageSelector {
+  color: #25045c;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .navLinks {
-    display: none; /* Will implement mobile menu later */
+  .navbar {
+    padding: 1rem;
   }
 
-  .navbar {
-    padding: 1rem 5%;
+  .navLinks {
+    display: none;
+  }
+
+  .languageSelector {
+    margin-left: auto;
+    padding-right: 1rem;
   }
 }

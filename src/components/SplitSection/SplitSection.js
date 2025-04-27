@@ -12,66 +12,68 @@ const SplitSection = () => {
   const sections = [
     {
       id: 1,
-      title: "Innovative Learning",
+      title: "Excellence Cup",
       description:
-        "Our platform revolutionizes education through cutting-edge technology and interactive content designed for modern learners.",
+        "The Excellence Cup is a dynamic and intellectually challenging competition launched in 2018 by Divergent, originally held between high school students.",
       imageUrl: img1,
-      learnMoreLink: "/innovative-learning",
+      learnMoreLink: "Excellence",
     },
     {
       id: 2,
-      title: "Global Community",
+      title: "STEM Culture",
       description:
-        "Join a network of 370K+ active users collaborating across borders to share knowledge and opportunities.",
+        "STEM Culture is an educational project launched in 2018 by Divergent, created to help ambitious students prepare for and successfully enter Egypt’s STEM high schools",
       imageUrl: img2,
-      learnMoreLink: "/global-community",
+      learnMoreLink: "/Stem",
     },
     {
       id: 3,
-      title: "Institutional Partnerships",
+      title: "Knowledge Planet",
       description:
-        "We collaborate with 210+ prestigious institutions to deliver world-class educational experiences.",
+        " Knowledge Planet is a yearly summit organized by Divergent, dedicated to connecting high school students with the world of higher education",
       imageUrl: img3,
-      learnMoreLink: "/partnerships",
+      learnMoreLink: "/KP",
     },
     {
       id: 4,
-      title: "Career Pathways",
+      title: "Meganom",
       description:
-        "500+ success stories of students placed in top internships and jobs through our career services.",
+        "Meganom is a cutting-edge AI competition created by Divergent",
       imageUrl: img4,
-      learnMoreLink: "/careers",
+      learnMoreLink: "/Meganom",
     },
     {
       id: 5,
-      title: "Personalized Support",
+      title: "Divergent Clubs",
       description:
-        "Tailored guidance and mentorship to help each learner achieve their unique educational goals.",
+        " Divergent Clubs are official student-led hubs established in schools across Egypt",
       imageUrl: img5,
-      learnMoreLink: "/support",
+      learnMoreLink: "/Clubs",
     },
   ];
 
   return (
-    <div className={styles.splitSectionContainer}>
-      {sections.map((section) => (
-        <div key={section.id} className={styles.splitSection}>
-          <div className={styles.textContent}>
-            <h2 className={styles.sectionTitle}>{section.title}</h2>
-            <p className={styles.sectionDescription}>{section.description}</p>
-            <a href={section.learnMoreLink} className={styles.learnMoreLink}>
-              Learn More →
-            </a>
+    <div id="splitSection" className={styles.splitScreen}>
+      <div className={styles.splitSectionContainer}>
+        {sections.map((section) => (
+          <div key={section.id} className={styles.splitSection}>
+            <div className={styles.textContent}>
+              <h2 className={styles.sectionTitle}>{section.title}</h2>
+              <p className={styles.sectionDescription}>{section.description}</p>
+              <a href={section.learnMoreLink} className={styles.learnMoreLink}>
+                Learn More →
+              </a>
+            </div>
+            <div className={styles.imageContainer}>
+              <img
+                src={section.imageUrl}
+                alt={section.title}
+                className={styles.sectionImage}
+              />
+            </div>
           </div>
-          <div className={styles.imageContainer}>
-            <img
-              src={section.imageUrl}
-              alt={section.title}
-              className={styles.sectionImage}
-            />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
