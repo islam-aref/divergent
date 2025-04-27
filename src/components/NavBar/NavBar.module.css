@@ -1,0 +1,82 @@
+@import "../../styles/variables.module.css";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: #25045c; /* Primary dark */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d7c9f9; /* Light purple */
+  text-decoration: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navLink {
+  color: #d7c9f9; /* Light purple */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #8d0dee; /* Primary accent */
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.languageButton {
+  background: transparent;
+  border: 2px solid #8d0dee; /* Primary accent */
+  color: #d7c9f9; /* Light purple */
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.languageButton:hover {
+  background-color: #8d0dee; /* Primary accent */
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Will implement mobile menu later */
+  }
+
+  .navbar {
+    padding: 1rem 5%;
+  }
+}

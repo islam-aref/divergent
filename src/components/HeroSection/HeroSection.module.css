@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.scrollContainer {
+  height: 300vh;
+}
+
+.hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background-color: #25045c;
+}
+
+.heroImage {
+  position: relative;
+  height: 100%;
+  background: url("hero-image.jpg") center/cover no-repeat;
+  transition: width 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentBox {
+  height: 100%;
+  background: #ba6af1;
+  display: none; /* Hide completely when not active */
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  opacity: 0; /* Start invisible */
+  width: 0%; /* Start with no width */
+  overflow: hidden; /* Prevent any overflow */
+  transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.contentBox.visible {
+  display: flex; /* Show when visible */
+  opacity: 1;
+  width: 75%;
+}
+
+.textContent {
+  max-width: 600px;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contentBox.visible .textContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.companyName {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.8s ease;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.heroHeadline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: #212529;
+  opacity: 1; /* Visible at the start */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(0); /* Ensure no movement initially */
+}
+
+.heroSubscript {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+  transform: translateY(10px);
+}
+
+.heroImage[style*="width: 25%"] ~ .contentBox .heroHeadline,
+.heroImage[style*="width: 25%"] ~ .contentBox .heroSubscript {
+  opacity: 1; /* Ensure visibility on interaction */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .heroImage,
+  .contentBox {
+    width: 100% !important;
+    height: 50%;
+  }
+
+  .companyName {
+    font-size: 3rem;
+  }
+
+  .heroHeadline {
+    font-size: 1.8rem;
+  }
+
+  .heroSubscript {
+    font-size: 1rem;
+  }
+}
+
+.contentBox[style*="width: 25%"] {
+  opacity: 1; /* Fade in the content box smoothly */
+  width: 75%; /* Expand content box on scroll */
+}

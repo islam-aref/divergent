@@ -1,0 +1,115 @@
+/* SplitSection.module.css */
+.splitSectionContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.splitSection {
+  display: flex;
+  min-height: 350px;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.textContent {
+  flex: 0 0 45%;
+  padding: 0 2rem 0 0;
+}
+
+.imageContainer {
+  flex: 0 0 55%;
+  height: 350px; /* Fixed height */
+}
+
+.sectionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-shadow: 0 8px 25px rgba(57, 4, 122, 0.15);
+  border-radius: 30px 0 30px 0;
+  transition: all 0.3s ease;
+}
+
+.sectionImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(57, 4, 122, 0.25);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #a6a5c1;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.learnMoreLink {
+  display: inline-block;
+  color: #fcfcfc;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+.learnMoreLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #a465f2;
+  transition: width 0.3s ease;
+}
+
+.learnMoreLink:hover {
+  color: #a465f2;
+}
+
+.learnMoreLink:hover::after {
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .splitSection {
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    min-height: auto;
+  }
+
+  .textContent,
+  .imageContainer {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .textContent {
+    padding: 0 0 1.5rem 0;
+    order: -1;
+  }
+
+  .sectionImage {
+    border-radius: 20px !important;
+    position: relative;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.95rem;
+  }
+}

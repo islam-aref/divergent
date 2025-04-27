@@ -1,0 +1,84 @@
+/* KPISection.module.css */
+.kpiSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #25045c, #39047a);
+  color: white;
+}
+
+.kpiQuarter {
+  position: relative;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-height: 200px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.kpiContent {
+  transition: all 0.3s ease;
+}
+
+.kpiHoverText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: larger;
+  padding: 5rem 8rem;
+  background: rgba(57, 4, 122, 0.9);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.kpiQuarter:hover .kpiHoverText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kpiQuarter:hover .kpiContent {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.kpiValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.kpiDescription {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .kpiSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .kpiQuarter {
+    min-height: 180px;
+    padding: 1.5rem 1rem;
+  }
+
+  .kpiValue {
+    font-size: 2rem;
+  }
+
+  .kpiDescription {
+    font-size: 1rem;
+  }
+}

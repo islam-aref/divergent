@@ -1,0 +1,63 @@
+@import "../../styles/variables.module.css";
+
+.missionVision {
+  display: flex;
+  min-height: 50vh;
+  width: 100%;
+}
+
+.mission,
+.vision {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission {
+  background-color: var(--primary-medium);
+  color: var(--text-on-dark);
+}
+
+.vision {
+  background-color: var(--light-purple);
+  color: var(--primary-dark);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-accent);
+  text-align: left; /* Titles aligned to left */
+  padding-left: 10%; /* Consistent title alignment */
+}
+
+.sectionText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto; /* Centers the text block */
+  text-align: justify; /* Justified text like MS Word */
+  text-justify: inter-word; /* Better word spacing */
+  font-weight: normal; /* Base weight */
+}
+
+.sectionText strong {
+  font-weight: 600; /* Bold text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .missionVision {
+    flex-direction: column;
+  }
+
+  .sectionTitle {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .sectionText {
+    max-width: 100%;
+  }
+}
