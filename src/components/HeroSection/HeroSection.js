@@ -37,9 +37,7 @@ const HeroSection = () => {
               opacity: 1 - scrollProgress * 1.5,
               transform: `translateY(${-scrollProgress * 50}px)`,
             }}
-          >
-            DIVERGENT
-          </h1>
+          ></h1>
         </div>
 
         {/* Content Box */}

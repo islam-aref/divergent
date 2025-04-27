@@ -13,6 +13,7 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .logoContainer {
@@ -24,6 +25,7 @@
   width: auto;
 }
 
+/* Desktop Navigation */
 .navLinks {
   display: flex;
   gap: 2.5rem;
@@ -87,6 +89,64 @@
   color: #8d0dee;
 }
 
+/* Mobile Navigation */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #25045c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ab6ed7;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  transform: translateY(-150%);
+  transition: transform 0.3s ease-out;
+  z-index: 1000;
+}
+
+.mobileNav.open {
+  transform: translateY(0);
+}
+
+.mobileNavLink {
+  color: #25045c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+}
+
+.mobilePrograms {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+.mobileDropdownItem {
+  color: #25045c;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+}
+
 .languageSelector {
   color: #25045c;
   font-weight: 500;
@@ -94,7 +154,7 @@
   padding: 0.5rem;
 }
 
-/* Mobile responsiveness */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;
@@ -104,8 +164,11 @@
     display: none;
   }
 
-  .languageSelector {
-    margin-left: auto;
-    padding-right: 1rem;
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileNav {
+    display: flex;
   }
 }

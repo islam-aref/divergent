@@ -44,15 +44,15 @@ const Footer = () => {
                   Programs
                 </Link>
               </li>
-              <li>
-                <Link to="/gallery">Gallery</Link>
-              </li>
             </ul>
           </div>
           <div className={styles.linksColumn}>
             <ul className={styles.linksList}>
               <li>
                 <Link to="/contact">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/gallery">Gallery</Link>
               </li>
             </ul>
           </div>
